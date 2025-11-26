@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: MIT
+// SPDX-FileCopyrightText: 2024 Synapse Contributors
+//
 // SYNAPSE - Rust Struct Parser
 // Parses Rust struct definitions marked with #[derive(Synapse)]
 //

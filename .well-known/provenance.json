@@ -1,0 +1,46 @@
+{
+  "$schema": "https://in-toto.io/Statement/v0.1",
+  "predicateType": "https://slsa.dev/provenance/v0.2",
+  "subject": [
+    {
+      "name": "synapse",
+      "digest": {
+        "sha256": "to-be-computed-at-release"
+      }
+    }
+  ],
+  "predicate": {
+    "builder": {
+      "id": "https://gitlab.com/synapse/synapse/-/pipelines"
+    },
+    "buildType": "https://gitlab.com/synapse/build-type/v1",
+    "invocation": {
+      "configSource": {
+        "uri": "git+https://gitlab.com/synapse/synapse",
+        "digest": {
+          "sha1": "to-be-computed-at-release"
+        },
+        "entryPoint": ".gitlab-ci.yml"
+      }
+    },
+    "metadata": {
+      "buildStartedOn": "to-be-computed-at-release",
+      "buildFinishedOn": "to-be-computed-at-release",
+      "completeness": {
+        "parameters": true,
+        "environment": true,
+        "materials": true
+      },
+      "reproducible": true
+    },
+    "materials": [
+      {
+        "uri": "git+https://gitlab.com/synapse/synapse",
+        "digest": {
+          "sha1": "to-be-computed-at-release"
+        }
+      }
+    ]
+  },
+  "_comment": "This file is a template. Actual values are computed during CI/CD release process."
+}

@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: MIT
+// SPDX-FileCopyrightText: 2024 Synapse Contributors
+//
 // SYNAPSE - Swift Template System
 //
 // THE APPLE STORE COMPLIANCE LAYER

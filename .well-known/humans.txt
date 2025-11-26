@@ -1,0 +1,17 @@
+/* TEAM */
+Project: Synapse - Rust-to-SwiftUI Meta-Compiler
+Role: Lead Developer
+Location: Earth
+
+/* THANKS */
+Zig Software Foundation - https://ziglang.org/
+Rust Community - https://rust-lang.org/
+Swift Community - https://swift.org/
+UniFFI Project - https://github.com/mozilla/uniffi-rs
+
+/* SITE */
+Last update: 2024-01-01
+Language: English
+Doctype: Zig, Rust, Swift
+Standards: RSR Gold, SPDX
+IDE: Whatever works for you

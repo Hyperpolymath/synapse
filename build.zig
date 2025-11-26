@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: MIT
+// SPDX-FileCopyrightText: 2024 Synapse Contributors
+//
 // SYNAPSE Build Configuration
 // Zig 0.11+ compatible
 

@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: MIT
+// SPDX-FileCopyrightText: 2024 Synapse Contributors
+//
 // SYNAPSE - Rust-to-SwiftUI Meta-Compiler
 // A Zig-based code generator that bridges the Rust↔Swift divide
 //

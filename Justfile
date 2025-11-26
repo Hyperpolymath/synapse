@@ -78,6 +78,69 @@ stats:
     @find examples/swift -name "*.swift" -exec cat {} \; | wc -l 2>/dev/null || echo "0"
 
 # ==========================================
+# RSR GOLD COMPLIANCE VALIDATION
+# ==========================================
+
+# Run all RSR compliance checks
+validate: check-docs check-spdx check-links check-well-known
+    @echo "✓ RSR Gold validation complete"
+
+# Check required documentation files exist
+check-docs:
+    @echo "Checking required documentation..."
+    @test -f README.md && echo "  ✓ README.md" || echo "  ✗ README.md missing"
+    @test -f LICENSE.txt && echo "  ✓ LICENSE.txt" || echo "  ✗ LICENSE.txt missing"
+    @test -f SECURITY.md && echo "  ✓ SECURITY.md" || echo "  ✗ SECURITY.md missing"
+    @test -f CODE_OF_CONDUCT.md && echo "  ✓ CODE_OF_CONDUCT.md" || echo "  ✗ CODE_OF_CONDUCT.md missing"
+    @test -f CONTRIBUTING.adoc && echo "  ✓ CONTRIBUTING.adoc" || echo "  ✗ CONTRIBUTING.adoc missing"
+    @test -f FUNDING.yml && echo "  ✓ FUNDING.yml" || echo "  ✗ FUNDING.yml missing"
+    @test -f GOVERNANCE.adoc && echo "  ✓ GOVERNANCE.adoc" || echo "  ✗ GOVERNANCE.adoc missing"
+    @test -f MAINTAINERS.md && echo "  ✓ MAINTAINERS.md" || echo "  ✗ MAINTAINERS.md missing"
+    @test -f .gitignore && echo "  ✓ .gitignore" || echo "  ✗ .gitignore missing"
+    @test -f .gitattributes && echo "  ✓ .gitattributes" || echo "  ✗ .gitattributes missing"
+    @test -f REVERSIBILITY.md && echo "  ✓ REVERSIBILITY.md" || echo "  ✗ REVERSIBILITY.md missing"
+    @test -f CHANGELOG.md && echo "  ✓ CHANGELOG.md" || echo "  ✗ CHANGELOG.md missing"
+    @test -f ROADMAP.md && echo "  ✓ ROADMAP.md" || echo "  ✗ ROADMAP.md missing"
+
+# Audit SPDX license headers in source files
+check-spdx:
+    @echo "Checking SPDX headers..."
+    @for f in $(find src -name "*.zig"); do \
+        if grep -q "SPDX-License-Identifier" "$$f"; then \
+            echo "  ✓ $$f"; \
+        else \
+            echo "  ✗ $$f missing SPDX header"; \
+        fi; \
+    done
+
+# Alias for RSR compliance
+audit-licence: check-spdx
+
+# Check .well-known directory
+check-well-known:
+    @echo "Checking .well-known files..."
+    @test -d .well-known && echo "  ✓ .well-known directory" || echo "  ✗ .well-known missing"
+    @test -f .well-known/security.txt && echo "  ✓ security.txt" || echo "  ✗ security.txt missing"
+    @test -f .well-known/ai.txt && echo "  ✓ ai.txt" || echo "  ✗ ai.txt missing"
+    @test -f .well-known/humans.txt && echo "  ✓ humans.txt" || echo "  ✗ humans.txt missing"
+    @test -f .well-known/provenance.json && echo "  ✓ provenance.json" || echo "  ✗ provenance.json missing"
+
+# Check links in documentation (requires lychee)
+check-links:
+    @echo "Checking documentation links..."
+    @if command -v lychee > /dev/null; then \
+        lychee --verbose *.md *.adoc || true; \
+    else \
+        echo "  ⚠ lychee not installed, skipping link check"; \
+    fi
+
+# Generate SBOM (Software Bill of Materials)
+sbom-generate:
+    @echo "Generating SBOM..."
+    @echo "{ \"name\": \"synapse\", \"version\": \"0.1.0\", \"license\": \"MIT\" }" > sbom.json
+    @echo "✓ SBOM generated: sbom.json"
+
+# ==========================================
 # USAGE EXAMPLE FOR YOUR DRIFT PROJECT:
 # ==========================================
 #

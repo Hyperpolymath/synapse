@@ -1,0 +1,12 @@
+# RFC 9116 Security.txt
+# https://securitytxt.org/
+
+Contact: https://gitlab.com/synapse/synapse/-/issues/new?issue[confidential]=true&issue[label_names][]=security
+Expires: 2025-12-31T23:59:59.000Z
+Preferred-Languages: en
+Canonical: https://gitlab.com/synapse/synapse/-/raw/main/.well-known/security.txt
+Policy: https://gitlab.com/synapse/synapse/-/blob/main/SECURITY.md
+
+# Acknowledgments
+# Contributors who have responsibly disclosed security issues
+# will be listed here (with their permission).

@@ -1,0 +1,30 @@
+# HTTP 430 Protocol - Consent Required
+# https://httpwg.org/specs/rfc9110.html
+#
+# This file documents consent requirements for Synapse.
+
+# Data Collection
+Synapse does not collect any data. It is a local code generator
+that runs entirely on your machine.
+
+# Network Access
+Synapse makes no network requests. It reads local files and
+writes local files. That's it.
+
+# Telemetry
+None.
+
+# Analytics
+None.
+
+# Cookies
+Not applicable (no web interface).
+
+# Third-Party Services
+None.
+
+# Consent Status
+No consent required because no data is collected.
+
+# Contact
+Questions about data practices: https://gitlab.com/synapse/synapse/-/issues

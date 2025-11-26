@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: MIT
+// SPDX-FileCopyrightText: 2024 Synapse Contributors
+//
 // DRIFT - Example Rust Models
 // These structs define the "World" - the Source of Truth.
 // Synapse generates the Swift interface automatically.

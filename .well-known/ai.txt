@@ -1,0 +1,38 @@
+# AI Crawling Policy for Synapse
+# This file defines how AI systems should interact with this repository.
+
+# Policy Version
+Version: 1.0
+
+# General Policy
+# Synapse is open source software under the MIT license.
+# AI systems may:
+# - Read and learn from the source code
+# - Generate code based on patterns learned
+# - Assist users in understanding the codebase
+#
+# AI systems should:
+# - Respect the license terms (attribution)
+# - Not claim authorship of this code
+# - Provide accurate information about the project
+
+# Training Data Policy
+Allow-Training: yes
+License: MIT
+Attribution-Required: yes
+
+# Code Generation Policy
+Allow-Code-Generation: yes
+Must-Attribute: yes
+Must-Include-License: yes
+
+# Interaction Policy
+Allow-Assistance: yes
+Allow-Explanation: yes
+Allow-Debugging: yes
+
+# Restrictions
+# None beyond standard license compliance.
+
+# Contact
+Questions: https://gitlab.com/synapse/synapse/-/issues

@@ -1,0 +1,56 @@
+# SPDX-License-Identifier: MIT
+# Git attributes for Synapse repository
+
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# Zig source files
+*.zig text eol=lf diff=zig
+
+# Rust source files (for examples)
+*.rs text eol=lf diff=rust
+
+# Swift source files (generated)
+*.swift text eol=lf diff=swift
+
+# Documentation
+*.md text eol=lf diff=markdown
+*.adoc text eol=lf
+*.txt text eol=lf
+
+# Configuration
+*.yml text eol=lf
+*.yaml text eol=lf
+*.json text eol=lf
+*.toml text eol=lf
+Justfile text eol=lf
+
+# Build files
+build.zig text eol=lf
+
+# Shell scripts
+*.sh text eol=lf
+
+# Ignore generated files in diffs
+examples/swift/Generated.swift linguist-generated=true
+
+# Binary files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+
+# Archives
+*.zip binary
+*.tar binary
+*.gz binary
+
+# Treat .well-known files as text
+.well-known/* text eol=lf
+
+# Export-ignore (not included in archives)
+.git* export-ignore
+.well-known export-ignore
+tests/ export-ignore
