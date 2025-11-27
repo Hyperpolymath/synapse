@@ -8,50 +8,72 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
-- Initial Synapse implementation
-- Zig-based Rust struct parser
-- SwiftUI ViewModel generator
-- iOS 17+ @Observable support
-- Legacy @ObservableObject support (iOS 14-16)
-- Justfile integration
-- RSR Gold compliance documentation
+- Nothing yet
 
 ### Changed
-- Nothing yet
-
-### Deprecated
-- Nothing yet
-
-### Removed
 - Nothing yet
 
 ### Fixed
 - Nothing yet
 
-### Security
-- Nothing yet
+## [0.1.0-alpha] - 2024-XX-XX
 
-## [0.1.0] - 2024-01-XX
+Initial alpha release of Synapse - the Rust-to-SwiftUI meta-compiler.
 
 ### Added
-- Core parser for Rust struct definitions (`src/parser/rust_parser.zig`)
-- Swift template system (`src/templates/swift_templates.zig`)
-- Main generator CLI (`src/generators/synapse.zig`)
-- Support for derive attributes: `Synapse`, `DriftUI`, `SwiftBridge`
-- Type mapping: Rust primitives to Swift types
-- Generated ViewModel pattern with `@Observable` (iOS 17+)
-- Generated ViewModel pattern with `@ObservableObject` (legacy)
-- Convenience `from(rust:)` initializers
-- SwiftUI Preview generation
-- Justfile commands: `build`, `gen-ui`, `gen-ui-legacy`, `test`, `clean`
-- Example Rust models demonstrating usage
-- Comprehensive RSR Gold documentation
+
+**Core Features**
+- Zig-based Rust struct parser (`src/parser/rust_parser.zig`)
+- SwiftUI ViewModel template system (`src/templates/swift_templates.zig`)
+- Command-line interface (`src/generators/synapse.zig`)
+
+**Rust Parsing**
+- Support for `#[derive(Synapse)]`, `#[derive(DriftUI)]`, `#[derive(SwiftBridge)]`
+- Field extraction with type inference
+- Documentation comment preservation
+- Visibility modifier handling (`pub`)
+
+**Swift Generation**
+- iOS 17+ `@Observable` macro support
+- iOS 14-16 `@ObservableObject` protocol support (legacy mode)
+- `@MainActor` annotation for UI thread safety
+- Convenience `from(rust:)` initializer extension
+- SwiftUI Preview provider generation
+
+**Type Mapping**
+- Rust primitives: `i32`, `i64`, `u32`, `u64`, `f32`, `f64`, `bool`
+- `String` to Swift `String`
+- `Vec<T>` to `[Any]` (generic extraction TODO)
+- `Option<T>` to `Any?` (generic extraction TODO)
+- Custom types passed through
+
+**Developer Experience**
+- Justfile with `gen-ui`, `gen-ui-legacy`, `build`, `test`, `clean` commands
+- Example Rust models (`examples/rust/models.rs`)
+- Comprehensive documentation
+
+**Compliance**
+- RSR Gold repository compliance
+- SPDX license headers on all source files
+- `.well-known/` directory with RFC-compliant files
+- Full documentation suite (README, SECURITY, CONTRIBUTING, etc.)
+
+**CI/CD**
+- GitLab CI pipeline for build, test, validate
+- Automated SPDX header checking
+- RSR compliance validation
+
+### Known Limitations
+- Generic type parameters not extracted (`Vec<String>` → `[Any]` not `[String]`)
+- No enum support yet
+- No nested struct support yet
+- Build not verified on all platforms
 
 ### Technical Details
-- Written in Zig for fast compilation and transparent memory management
-- No external dependencies beyond Zig standard library
-- Parses Rust source directly (no intermediate format)
+- Written in Zig 0.11+ (no external dependencies)
+- Parses Rust source directly (no AST library)
 - Template-based generation for easy Apple spec updates
+- Zero runtime dependencies in generated code
 
 ---
 
